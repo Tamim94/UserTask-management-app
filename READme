@@ -1,0 +1,185 @@
+Here is the full README in French for the root of your project:
+
+```markdown
+# Documentation de l'Application - Gestionnaire de Tâches (Node.js & Vue.js)
+
+## Aperçu
+
+Ce projet est une application complète de gestion de tâches basée sur une architecture front-end/back-end. Le front-end est développé avec Vue 3, TypeScript, et Element Plus pour l'interface utilisateur. Le back-end utilise Node.js avec Express pour gérer les API REST, et MongoDB comme base de données.
+
+Le projet vous permet de gérer des utilisateurs et des tâches, avec un cryptage des mots de passe lors de la création d'utilisateurs et des fonctionnalités complètes CRUD (Create, Read, Update, Delete) pour les utilisateurs et les tâches.
+
+## Prérequis
+
+Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
+
+- **Node.js** v18.12.0
+- **npm** (inclus avec Node.js)
+- **MongoDB** 7.0.8
+- **Postman** (pour tester l'API)
+- **IntelliJ IDEA Ultimate 2024** (ou un autre IDE pour le développement)
+
+## Structure du Projet
+
+```bash
+project-root/
+├── backend/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── app.js
+│   ├── package.json
+│   └── ...
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   ├── App.vue
+│   ├── main.ts
+│   └── ...
+├── README.md
+└── ...
+```
+
+### backend/
+Contient toute la logique du serveur Node.js, y compris les contrôleurs, les modèles Mongoose, et les routes Express.
+
+### frontend/
+Le front-end est construit avec Vue.js et inclut les composants réutilisables, la configuration du routage et la gestion de l'état avec Vuex.
+
+## Installation
+
+### Étape 1 : Cloner le projet
+
+Clonez ce dépôt sur votre machine locale.
+
+```bash
+git clone https://github.com/username/project.git
+cd project
+```
+
+### Étape 2 : Backend Setup
+
+Accédez au répertoire `backend` pour configurer le serveur Node.js.
+
+#### 1. Installez les dépendances back-end
+
+```bash
+npm install
+```
+
+Voici les principales dépendances utilisées :
+
+- `dotenv`
+- `express-validator`
+- `bcryptjs`
+- `nodemon`
+- `jest` (pour les tests)
+
+#### 2. Lancer le serveur MongoDB
+
+Assurez-vous que MongoDB est démarré et écoutant sur le port par défaut.
+
+#### 3. Lancer le serveur Node.js
+
+Utilisez `npm run dev` pour démarrer le serveur en mode développement.
+
+```bash
+npm run dev
+```
+
+Si le port 3000 est déjà utilisé, vous pouvez libérer le port avec les commandes suivantes sur PowerShell :
+
+```bash
+netstat -aon | Select-String 3000
+taskkill /f /pid [numéro du processus]
+```
+
+### Étape 3 : Frontend Setup
+
+Accédez au répertoire `frontend` pour configurer l'application Vue.js.
+
+#### 1. Installez les dépendances front-end
+
+```bash
+npm install
+```
+
+#### 2. Démarrez le serveur de développement Vue.js
+
+```bash
+npm run serve
+```
+
+Cela démarrera le serveur de développement sur le port 8080 par défaut. Vous pouvez y accéder via `http://localhost:8080`.
+
+## API - Gestion des Utilisateurs & Tâches
+
+### Utilisateurs
+
+- **Route de base des utilisateurs** : `http://localhost:3000/users`
+
+#### Exemples de requêtes (via Postman) :
+
+##### Créer un utilisateur (POST)
+
+```json
+{
+  "fullName": "John Doe",
+  "job": "Developer",
+  "role": "admin",
+  "email": "johndoe@test.com",
+  "password": "mypassword"
+}
+```
+
+##### Obtenir la liste des utilisateurs (GET)
+
+`GET http://localhost:3000/users`
+
+##### Mettre à jour un utilisateur (PUT)
+
+`PUT http://localhost:3000/users/:id`
+
+##### Supprimer un utilisateur (DELETE)
+
+`DELETE http://localhost:3000/users/:id`
+
+### Tâches
+
+- **Route de base des tâches** : `http://localhost:3000/tasks`
+
+#### Exemples de requêtes (via Postman) :
+
+##### Créer une tâche (POST)
+
+```json
+{
+  "userId": "61e5f31e5c3f3b1b48ff3b12",
+  "dueDate": "2024-12-31"
+}
+```
+
+##### Obtenir la liste des tâches (GET)
+
+`GET http://localhost:3000/tasks`
+
+##### Mettre à jour une tâche (PUT)
+
+`PUT http://localhost:3000/tasks/:id`
+
+##### Supprimer une tâche (DELETE)
+
+`DELETE http://localhost:3000/tasks/:id`
+
+## Tests
+
+Vous pouvez exécuter les tests définis dans le projet backend avec la commande :
+
+```bash
+npm run test
+```
+
+## Conclusion
+
+Ce projet vous offre un modèle complet pour un gestionnaire de tâches et d'utilisateurs avec un front-end Vue.js et un back-end Node.js. N'hésitez pas à explorer le code, à le personnaliser et à me contacter pour toute question à [golam.tamim94@gmail.com](mailto:golam.tamim94@gmail.com).
+```
