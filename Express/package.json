@@ -5,7 +5,8 @@
   "scripts": {
     "test": "jest",
     "start": "cross-env NODE_ENV=development node ./bin/www",
-    "dev": " cross-env NODE_ENV=development nodemon ./bin/www"
+    "dev": " cross-env NODE_ENV=development nodemon ./bin/www",
+    "build": "cd ../frontend && npm install && npm run build && cp -r ../frontend/dist ./public"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
